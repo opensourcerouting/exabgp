@@ -298,6 +298,9 @@ def redirect(tokeniser):
             raise ValueError('route target is a 32 bits number, value too large %s' % route_target)
         return NoNextHop, ExtendedCommunities().add(TrafficRedirect(asn, route_target))
     else:
+        if count == 2:
+            return IP.create(data), ExtendedCommunities().add(TrafficNextHopSimpson(False))
+
         elements = data.split(':')
         ip = ':'.join(elements[:-1])
         asn = int(elements[-1])
