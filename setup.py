@@ -45,6 +45,6 @@ if 'systemd' in sys.argv:
         data_files.append(('/lib/systemd/system', filesOf('etc/systemd')))
 
 setuptools.setup(
-    download_url='https://github.com/Exa-Networks/exabgp/archive/%s.tar.gz' % exabgp_version.version.split('-')[0],
+    download_url='https://github.com/opensourcerouting/exabgp/archive/%s.tar.gz' % exabgp_version.version.split('-')[0],
     data_files=data_files,
 )
